@@ -29,6 +29,7 @@ import {
   TagLabel,
   TagCloseButton,
   Flex,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
@@ -126,36 +127,48 @@ const Dashboard = () => {
   };
 
   return (
-    <Container maxW="container.xl" py={8}>
+    <Container
+      maxW="container.xl"
+      py={8}
+      bg={useColorModeValue("gray.50", "gray.900")}
+    >
       <VStack spacing={8} align="stretch">
         <HStack justify="space-between">
-          <Heading>Project Dashboard</Heading>
+          <Heading color={useColorModeValue("gray.700", "white")}>
+            Project Dashboard
+          </Heading>
           <Button
             leftIcon={<FaPlus />}
-            colorScheme="brand"
+            colorScheme={useColorModeValue("brand", "blue")}
             onClick={handleAddProject}
           >
             Add New Project
           </Button>
         </HStack>
 
-        <Box overflowX="auto">
+        <Box overflowX="auto" bg={useColorModeValue("white", "gray.800")}>
           <Table variant="simple">
             <Thead>
               <Tr>
-                <Th>Title</Th>
-                <Th>Description</Th>
-                <Th>Tags</Th>
-                <Th>Featured</Th>
-                <Th>Actions</Th>
+                <Th color={useColorModeValue("gray.700", "white")}>Title</Th>
+                <Th color={useColorModeValue("gray.700", "white")}>
+                  Description
+                </Th>
+                <Th color={useColorModeValue("gray.700", "white")}>Tags</Th>
+                <Th color={useColorModeValue("gray.700", "white")}>Featured</Th>
+                <Th color={useColorModeValue("gray.700", "white")}>Actions</Th>
               </Tr>
             </Thead>
             <Tbody>
               {projects.map((project) => (
                 <Tr key={project.id}>
-                  <Td>{project.title}</Td>
-                  <Td>{project.description.substring(0, 50)}...</Td>
-                  <Td>
+                  <Td color={useColorModeValue("gray.700", "white")}>
+                    {project.title}
+                  </Td>
+                  <Td color={useColorModeValue("gray.700", "white")}>
+                    {project.description.substring(0, 50)}...
+                  </Td>
+                  <Td color={useColorModeValue("gray.700", "white")}>
                     <HStack spacing={2}>
                       {project.tags.map((tag) => (
                         <Tag key={tag} size="sm" colorScheme="brand">
@@ -164,8 +177,10 @@ const Dashboard = () => {
                       ))}
                     </HStack>
                   </Td>
-                  <Td>{project.featured ? "Yes" : "No"}</Td>
-                  <Td>
+                  <Td color={useColorModeValue("gray.700", "white")}>
+                    {project.featured ? "Yes" : "No"}
+                  </Td>
+                  <Td color={useColorModeValue("gray.700", "white")}>
                     <HStack spacing={2}>
                       <IconButton
                         aria-label="Edit project"
@@ -192,14 +207,16 @@ const Dashboard = () => {
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>
+          <ModalHeader color={useColorModeValue("gray.700", "white")}>
             {currentProject.id ? "Edit Project" : "Add New Project"}
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <VStack spacing={4}>
               <FormControl isRequired>
-                <FormLabel>Title</FormLabel>
+                <FormLabel color={useColorModeValue("gray.700", "white")}>
+                  Title
+                </FormLabel>
                 <Input
                   value={currentProject.title || ""}
                   onChange={(e) =>
@@ -212,7 +229,9 @@ const Dashboard = () => {
               </FormControl>
 
               <FormControl isRequired>
-                <FormLabel>Description</FormLabel>
+                <FormLabel color={useColorModeValue("gray.700", "white")}>
+                  Description
+                </FormLabel>
                 <Textarea
                   value={currentProject.description || ""}
                   onChange={(e) =>
@@ -225,7 +244,9 @@ const Dashboard = () => {
               </FormControl>
 
               <FormControl>
-                <FormLabel>Image URL</FormLabel>
+                <FormLabel color={useColorModeValue("gray.700", "white")}>
+                  Image URL
+                </FormLabel>
                 <Input
                   value={currentProject.image || ""}
                   onChange={(e) =>
@@ -238,7 +259,9 @@ const Dashboard = () => {
               </FormControl>
 
               <FormControl>
-                <FormLabel>GitHub URL</FormLabel>
+                <FormLabel color={useColorModeValue("gray.700", "white")}>
+                  GitHub URL
+                </FormLabel>
                 <Input
                   value={currentProject.github || ""}
                   onChange={(e) =>
@@ -251,7 +274,9 @@ const Dashboard = () => {
               </FormControl>
 
               <FormControl>
-                <FormLabel>Live URL</FormLabel>
+                <FormLabel color={useColorModeValue("gray.700", "white")}>
+                  Live URL
+                </FormLabel>
                 <Input
                   value={currentProject.live || ""}
                   onChange={(e) =>
@@ -264,7 +289,9 @@ const Dashboard = () => {
               </FormControl>
 
               <FormControl>
-                <FormLabel>Tags</FormLabel>
+                <FormLabel color={useColorModeValue("gray.700", "white")}>
+                  Tags
+                </FormLabel>
                 <Flex>
                   <Input
                     value={newTag}
@@ -291,7 +318,9 @@ const Dashboard = () => {
               </FormControl>
 
               <FormControl>
-                <FormLabel>Featured</FormLabel>
+                <FormLabel color={useColorModeValue("gray.700", "white")}>
+                  Featured
+                </FormLabel>
                 <Select
                   value={currentProject.featured ? "true" : "false"}
                   onChange={(e) =>
@@ -307,7 +336,7 @@ const Dashboard = () => {
               </FormControl>
 
               <Button
-                colorScheme="brand"
+                colorScheme={useColorModeValue("brand", "blue")}
                 onClick={handleSaveProject}
                 width="full"
               >

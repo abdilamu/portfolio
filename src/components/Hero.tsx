@@ -6,165 +6,67 @@ import {
   Button,
   Stack,
   useColorModeValue,
-  Image,
-  Flex,
+  VStack,
+  HStack,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-
-const MotionBox = motion(Box);
+import { Link as RouterLink } from "react-router-dom";
 
 const Hero = () => {
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
-      position="relative"
-      overflow="hidden"
+      minH="100vh"
+      display="flex"
+      alignItems="center"
     >
-      {/* Background decoration */}
-      <Box
-        position="absolute"
-        top="-10%"
-        right="-10%"
-        w="500px"
-        h="500px"
-        bg="brand.100"
-        borderRadius="full"
-        filter="blur(100px)"
-        opacity="0.5"
-      />
-      <Box
-        position="absolute"
-        bottom="-10%"
-        left="-10%"
-        w="500px"
-        h="500px"
-        bg="accent.100"
-        borderRadius="full"
-        filter="blur(100px)"
-        opacity="0.5"
-      />
-
-      <Container maxW="container.xl" py={20} position="relative">
-        <Flex
-          direction={{ base: "column", lg: "row" }}
-          align="center"
-          justify="space-between"
-          gap={8}
-        >
-          <Stack
-            spacing={6}
-            flex="1"
-            textAlign={{ base: "center", lg: "left" }}
-          >
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+      <Container maxW="container.xl">
+        <Stack spacing={8} textAlign="center">
+          <VStack spacing={6}>
+            <Heading
+              fontSize={{ base: "3xl", md: "4xl", lg: "6xl" }}
+              fontWeight="bold"
+              color={useColorModeValue("gray.800", "white")}
             >
-              <Text
-                color="brand.500"
-                fontWeight="semibold"
-                fontSize="lg"
-                mb={2}
-              >
-                Welcome to my portfolio
+              Hi, I'm{" "}
+              <Text as="span" color="brand.500">
+                Abdi Lamu
               </Text>
-              <Heading
-                fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
-                fontWeight="bold"
-                lineHeight="1.2"
-                bgGradient="linear(to-r, brand.500, accent.500)"
-                bgClip="text"
-              >
-                Hi, I'm{" "}
-                <Text as="span" color="brand.500">
-                  Abdi Lamu
-                </Text>
-              </Heading>
-            </MotionBox>
-
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+            </Heading>
+            <Text
+              fontSize={{ base: "lg", md: "xl" }}
+              color={useColorModeValue("gray.600", "gray.300")}
+              maxW="2xl"
             >
-              <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                color={useColorModeValue("gray.600", "gray.400")}
-                maxW="2xl"
-              >
-                A passionate full-stack developer crafting beautiful and
-                functional web experiences. I specialize in building modern,
-                responsive, and user-friendly applications.
-              </Text>
-            </MotionBox>
-
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              I am a Software Engineering graduate from Haramaya University,
+              awarded for academic excellence and a top scorer in the national
+              exit exam. My journey is driven by curiosity, hard work, and a
+              commitment to making a difference through technology.
+            </Text>
+          </VStack>
+          <HStack spacing={4} justify="center">
+            <Button
+              as={RouterLink}
+              to="/projects"
+              size="lg"
+              colorScheme="brand"
+              rounded="full"
+              px={8}
             >
-              <Stack
-                direction={{ base: "column", sm: "row" }}
-                spacing={4}
-                justify={{ base: "center", lg: "flex-start" }}
-              >
-                <Button
-                  size="lg"
-                  colorScheme="brand"
-                  px={8}
-                  onClick={() => (window.location.href = "#projects")}
-                  _hover={{
-                    transform: "translateY(-2px)",
-                    boxShadow: "lg",
-                  }}
-                  transition="all 0.2s"
-                >
-                  View My Work
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  px={8}
-                  onClick={() => (window.location.href = "#contact")}
-                  _hover={{
-                    transform: "translateY(-2px)",
-                    boxShadow: "lg",
-                  }}
-                  transition="all 0.2s"
-                >
-                  Contact Me
-                </Button>
-              </Stack>
-            </MotionBox>
-          </Stack>
-
-          <MotionBox
-            flex="1"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            display={{ base: "none", lg: "block" }}
-          >
-            <Box
-              position="relative"
-              w="full"
-              h="400px"
-              bg="white"
-              borderRadius="2xl"
-              boxShadow="2xl"
-              overflow="hidden"
+              View My Work
+            </Button>
+            <Button
+              as={RouterLink}
+              to="/contact"
+              size="lg"
+              variant="outline"
+              colorScheme="brand"
+              rounded="full"
+              px={8}
             >
-              <Image
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
-                alt="Developer workspace"
-                objectFit="cover"
-                w="full"
-                h="full"
-              />
-            </Box>
-          </MotionBox>
-        </Flex>
+              Get In Touch
+            </Button>
+          </HStack>
+        </Stack>
       </Container>
     </Box>
   );

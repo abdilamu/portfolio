@@ -10,14 +10,16 @@ import {
   useDisclosure,
   Collapse,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useColorMode } from "@chakra-ui/react";
 
 const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,12 +72,20 @@ const Navbar = () => {
             spacing={6}
             display={{ base: "none", md: "flex" }}
           >
+            {/* Navigation Links */}
             <Button
               as={RouterLink}
               to="/"
               variant="ghost"
-              color={isActive("/") ? "brand.600" : undefined}
-              _hover={{ bg: "brand.50", color: "brand.600" }}
+              color={
+                isActive("/")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
             >
               Home
             </Button>
@@ -83,8 +93,15 @@ const Navbar = () => {
               as={RouterLink}
               to="/projects"
               variant="ghost"
-              color={isActive("/projects") ? "brand.600" : undefined}
-              _hover={{ bg: "brand.50", color: "brand.600" }}
+              color={
+                isActive("/projects")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
             >
               Projects
             </Button>
@@ -92,8 +109,15 @@ const Navbar = () => {
               as={RouterLink}
               to="/education"
               variant="ghost"
-              color={isActive("/education") ? "brand.600" : undefined}
-              _hover={{ bg: "brand.50", color: "brand.600" }}
+              color={
+                isActive("/education")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
             >
               Education
             </Button>
@@ -101,11 +125,25 @@ const Navbar = () => {
               as={RouterLink}
               to="/dashboard"
               variant="ghost"
-              color={isActive("/dashboard") ? "brand.600" : undefined}
-              _hover={{ bg: "brand.50", color: "brand.600" }}
+              color={
+                isActive("/dashboard")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
             >
               Dashboard
             </Button>
+            {/* Dark mode toggle button */}
+            <IconButton
+              aria-label="Toggle dark mode"
+              icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              onClick={toggleColorMode}
+              variant="ghost"
+            />
           </Stack>
 
           <IconButton
@@ -123,14 +161,22 @@ const Navbar = () => {
             p={4}
             display={{ md: "none" }}
           >
+            {/* Navigation Links */}
             <Button
               as={RouterLink}
               to="/"
               variant="ghost"
               w="100%"
               justifyContent="flex-start"
-              color={isActive("/") ? "brand.600" : undefined}
-              _hover={{ bg: "brand.50", color: "brand.600" }}
+              color={
+                isActive("/")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
             >
               Home
             </Button>
@@ -140,8 +186,15 @@ const Navbar = () => {
               variant="ghost"
               w="100%"
               justifyContent="flex-start"
-              color={isActive("/projects") ? "brand.600" : undefined}
-              _hover={{ bg: "brand.50", color: "brand.600" }}
+              color={
+                isActive("/projects")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
             >
               Projects
             </Button>
@@ -151,8 +204,15 @@ const Navbar = () => {
               variant="ghost"
               w="100%"
               justifyContent="flex-start"
-              color={isActive("/education") ? "brand.600" : undefined}
-              _hover={{ bg: "brand.50", color: "brand.600" }}
+              color={
+                isActive("/education")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
             >
               Education
             </Button>
@@ -162,11 +222,26 @@ const Navbar = () => {
               variant="ghost"
               w="100%"
               justifyContent="flex-start"
-              color={isActive("/dashboard") ? "brand.600" : undefined}
-              _hover={{ bg: "brand.50", color: "brand.600" }}
+              color={
+                isActive("/dashboard")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
             >
               Dashboard
             </Button>
+            {/* Dark mode toggle button for mobile */}
+            <IconButton
+              aria-label="Toggle dark mode"
+              icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              onClick={toggleColorMode}
+              variant="ghost"
+              w="100%"
+            />
           </Stack>
         </Collapse>
       </Container>

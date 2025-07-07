@@ -4,10 +4,10 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import theme from "./theme";
 import DashboardPage from "./pages/DashboardPage";
+import EducationPage from "./pages/EducationPage";
+import Projects from "./pages/ProjectsPage";
 
 // Placeholder components - we'll create these next
-const About = () => <div>About Page</div>;
-const Projects = () => <div>Projects Page</div>;
 const Contact = () => <div>Contact Page</div>;
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <MainLayout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/education" element={<EducationPage />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/dashboard" element={<DashboardPage />} />

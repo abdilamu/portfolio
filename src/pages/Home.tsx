@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Icon,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import {
@@ -104,6 +105,19 @@ const Skills = () => {
   );
 };
 
+const AboutSection = () => (
+  <Box id="about" py={16}>
+    <VStack spacing={4} align="start">
+      <Heading size="lg">About Me</Heading>
+      <Text>
+        I am a passionate developer with experience in building modern web
+        applications. I love working with React, TypeScript, and UI frameworks
+        to create beautiful and functional user experiences.
+      </Text>
+    </VStack>
+  </Box>
+);
+
 const Home = () => {
   const bgColor = useColorModeValue("white", "gray.800");
   const textColor = useColorModeValue("gray.600", "gray.400");
@@ -111,6 +125,7 @@ const Home = () => {
   return (
     <Box>
       <Hero />
+      <AboutSection />
       <Skills />
       <Projects />
     </Box>
