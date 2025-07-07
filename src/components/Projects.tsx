@@ -7,16 +7,11 @@ import {
   Stack,
   useColorModeValue,
   Image,
-  Tag,
-  HStack,
   Badge,
   Icon,
-  Link,
-  Flex,
   Button,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { FaReact, FaNodeJs, FaDatabase, FaMobile } from "react-icons/fa";
 import { SiTypescript, SiChakraui } from "react-icons/si";
 
@@ -26,9 +21,9 @@ interface Project {
   title: string;
   description: string;
   image: string;
-  tags: string[];
-  github?: string;
-  live?: string;
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
   featured?: boolean;
 }
 

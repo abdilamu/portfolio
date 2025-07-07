@@ -3,14 +3,12 @@ import {
   Container,
   Heading,
   Text,
-  Button,
   Stack,
   SimpleGrid,
   Icon,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
 import {
   FaReact,
   FaNodeJs,
@@ -18,7 +16,7 @@ import {
   FaGitAlt,
   FaDocker,
 } from "react-icons/fa";
-import { SiTypescript, SiJavascript, SiPython } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 
@@ -119,9 +117,6 @@ const AboutSection = () => (
 );
 
 const Home = () => {
-  const bgColor = useColorModeValue("white", "gray.800");
-  const textColor = useColorModeValue("gray.600", "gray.400");
-
   return (
     <Box>
       <Hero />
