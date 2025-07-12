@@ -44,7 +44,7 @@ const Hero = () => {
                 width={{ base: "200px", md: "250px", lg: "300px" }}
                 height={{ base: "200px", md: "250px", lg: "300px" }}
                 objectFit="cover"
-                fallbackSrc="https://via.placeholder.com/300x300/3182CE/FFFFFF?text=Abdi+Lamu"
+                fallbackSrc="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%233182CE;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232B6CB0;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='300' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='72' font-weight='bold' fill='white'%3EAL%3C/text%3E%3C/svg%3E"
               />
             </Box>
           </VStack>
