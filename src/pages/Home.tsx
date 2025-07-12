@@ -19,6 +19,7 @@ import {
 import { SiTypescript } from "react-icons/si";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
+import Contact from "../components/Contact";
 
 interface Skill {
   name: string;
@@ -104,15 +105,46 @@ const Skills = () => {
 };
 
 const AboutSection = () => (
-  <Box id="about" py={16}>
-    <VStack spacing={4} align="start">
-      <Heading size="lg">About Me</Heading>
-      <Text>
-        I am a passionate developer with experience in building modern web
-        applications. I love working with React, TypeScript, and UI frameworks
-        to create beautiful and functional user experiences.
-      </Text>
-    </VStack>
+  <Box id="about" py={16} bg={useColorModeValue("white", "gray.800")}>
+    <Container maxW="container.xl">
+      <VStack spacing={8} align="start">
+        <Heading size="xl" color={useColorModeValue("gray.800", "white")}>
+          About Me
+        </Heading>
+        <Text
+          fontSize="lg"
+          color={useColorModeValue("gray.600", "gray.300")}
+          lineHeight="tall"
+        >
+          I am a Software Engineering graduate from Haramaya University with a
+          passion for creating innovative solutions that make a difference. My
+          journey in technology is driven by curiosity, continuous learning, and
+          a commitment to excellence.
+        </Text>
+        <Text
+          fontSize="lg"
+          color={useColorModeValue("gray.600", "gray.300")}
+          lineHeight="tall"
+        >
+          I specialize in full-stack development, with expertise in React,
+          Node.js, and mobile development. My experience includes building
+          scalable applications, integrating complex systems, and delivering
+          projects that exceed expectations. I'm always exploring new
+          technologies and methodologies to stay at the forefront of software
+          development.
+        </Text>
+        <Text
+          fontSize="lg"
+          color={useColorModeValue("gray.600", "gray.300")}
+          lineHeight="tall"
+        >
+          When I'm not coding, you can find me exploring new technologies,
+          contributing to open-source projects, or sharing knowledge with the
+          developer community. I believe in the power of technology to solve
+          real-world problems and create positive impact.
+        </Text>
+      </VStack>
+    </Container>
   </Box>
 );
 
@@ -123,6 +155,7 @@ const Home = () => {
       <AboutSection />
       <Skills />
       <Projects />
+      <Contact />
     </Box>
   );
 };

@@ -13,7 +13,13 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase, FaMobile } from "react-icons/fa";
-import { SiTypescript, SiChakraui } from "react-icons/si";
+import {
+  SiTypescript,
+  SiChakraui,
+  SiFlutter,
+  SiFirebase,
+  SiDart,
+} from "react-icons/si";
 
 const MotionBox = motion(Box);
 
@@ -49,6 +55,16 @@ const ProjectCard = ({
         return SiChakraui;
       case "react native":
         return FaMobile;
+      case "flutter":
+        return SiFlutter;
+      case "firebase":
+        return SiFirebase;
+      case "dart":
+        return SiDart;
+      case "cloud firestore":
+        return SiFirebase;
+      case "firebase auth":
+        return SiFirebase;
       default:
         return FaReact;
     }
@@ -165,11 +181,11 @@ const Projects = () => {
       image:
         "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1333&q=80",
       technologies: [
-        "React Native",
-        "Node.js",
-        "MongoDB",
-        "Express.js",
-        "REST APIs",
+        "Flutter",
+        "Firebase",
+        "Dart",
+        "Cloud Firestore",
+        "Firebase Auth",
         "Payment Gateway",
         "AI Integration",
       ],

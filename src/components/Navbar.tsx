@@ -121,6 +121,22 @@ const Navbar = () => {
             >
               Education
             </Button>
+            <Button
+              as={RouterLink}
+              to="/skills"
+              variant="ghost"
+              color={
+                isActive("/skills")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
+            >
+              Skills
+            </Button>
             {/* Dark mode toggle button */}
             <IconButton
               aria-label="Toggle dark mode"
@@ -199,6 +215,24 @@ const Navbar = () => {
               }}
             >
               Education
+            </Button>
+            <Button
+              as={RouterLink}
+              to="/skills"
+              variant="ghost"
+              w="100%"
+              justifyContent="flex-start"
+              color={
+                isActive("/skills")
+                  ? useColorModeValue("brand.600", "brand.300")
+                  : useColorModeValue("gray.700", "gray.100")
+              }
+              _hover={{
+                bg: useColorModeValue("brand.50", "gray.700"),
+                color: useColorModeValue("brand.600", "brand.300"),
+              }}
+            >
+              Skills
             </Button>
             {/* Dark mode toggle button for mobile */}
             <IconButton

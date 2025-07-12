@@ -3,6 +3,7 @@ import {
   Container,
   Stack,
   Text,
+  VStack,
   useColorModeValue,
   IconButton,
 } from "@chakra-ui/react";
@@ -26,7 +27,17 @@ const Footer = () => {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
-        <Text>© 2024 Abdi Lamu. All rights reserved</Text>
+        <VStack spacing={2} align={{ base: "center", md: "start" }}>
+          <Text fontWeight="bold" fontSize="lg">
+            Abdi Lamu Akuma
+          </Text>
+          <Text fontSize="sm" color={useColorModeValue("gray.500", "gray.400")}>
+            Software Engineer & Full-Stack Developer
+          </Text>
+          <Text fontSize="xs" color={useColorModeValue("gray.400", "gray.500")}>
+            © 2024 Abdi Lamu. All rights reserved
+          </Text>
+        </VStack>
         <Stack direction={"row"} spacing={6}>
           <IconButton
             aria-label="GitHub"

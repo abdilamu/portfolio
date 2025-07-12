@@ -2,6 +2,7 @@ import { Box, Container } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -17,6 +18,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         </Container>
       </Box>
       <Footer />
+      <ScrollToTop />
     </Box>
   );
 };
