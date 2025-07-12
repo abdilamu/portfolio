@@ -1,4 +1,4 @@
-import { Box, IconButton, useColorModeValue } from "@chakra-ui/react";
+import { Box, IconButton } from "@chakra-ui/react";
 import { FaArrowUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
@@ -51,7 +51,7 @@ const ScrollToTop = () => {
           />
         </Box>
       )}
-      <style jsx>{`
+      <style>{`
         @keyframes fadeIn {
           from {
             opacity: 0;
