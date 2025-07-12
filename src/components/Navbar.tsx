@@ -121,22 +121,6 @@ const Navbar = () => {
             >
               Education
             </Button>
-            <Button
-              as={RouterLink}
-              to="/dashboard"
-              variant="ghost"
-              color={
-                isActive("/dashboard")
-                  ? useColorModeValue("brand.600", "brand.300")
-                  : useColorModeValue("gray.700", "gray.100")
-              }
-              _hover={{
-                bg: useColorModeValue("brand.50", "gray.700"),
-                color: useColorModeValue("brand.600", "brand.300"),
-              }}
-            >
-              Dashboard
-            </Button>
             {/* Dark mode toggle button */}
             <IconButton
               aria-label="Toggle dark mode"
@@ -215,24 +199,6 @@ const Navbar = () => {
               }}
             >
               Education
-            </Button>
-            <Button
-              as={RouterLink}
-              to="/dashboard"
-              variant="ghost"
-              w="100%"
-              justifyContent="flex-start"
-              color={
-                isActive("/dashboard")
-                  ? useColorModeValue("brand.600", "brand.300")
-                  : useColorModeValue("gray.700", "gray.100")
-              }
-              _hover={{
-                bg: useColorModeValue("brand.50", "gray.700"),
-                color: useColorModeValue("brand.600", "brand.300"),
-              }}
-            >
-              Dashboard
             </Button>
             {/* Dark mode toggle button for mobile */}
             <IconButton

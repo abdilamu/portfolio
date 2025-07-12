@@ -159,24 +159,43 @@ const ProjectCard = ({
 const Projects = () => {
   const projects = [
     {
-      title: "Ethiopia Travel Guide App",
+      title: "Visit Ethiopia Mobile Application",
       description:
-        "A mobile application that helps tourists explore Ethiopia, featuring local attractions, cultural information, and travel tips.",
+        "A comprehensive mobile application developed as my final academic project at Haramaya University. The app serves as a complete travel companion for tourists visiting Ethiopia, featuring local attractions, cultural information, payment integrations, multi-language support, and an AI assistant. This project demonstrates full-stack development skills, mobile app development, API integration, and database management.",
       image:
         "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1333&q=80",
-      technologies: ["React Native", "Node.js", "MongoDB"],
-      liveUrl: "https://ethiopia-travel-app.com",
-      githubUrl: "https://github.com/yourusername/ethiopia-travel-app",
+      technologies: [
+        "React Native",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "REST APIs",
+        "Payment Gateway",
+        "AI Integration",
+      ],
+      liveUrl: "https://visit-ethiopia-app.com",
+      githubUrl: "https://github.com/abdi-lamu/visit-ethiopia-app",
+      featured: true,
+    },
+    {
+      title: "Personal Portfolio Website",
+      description:
+        "A modern, responsive portfolio website built with React, TypeScript, and Chakra UI. Features dark/light mode, smooth animations, and is deployed on Netlify. Demonstrates frontend development skills, responsive design, and modern web technologies.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80",
+      technologies: ["React", "TypeScript", "Chakra UI", "Vite", "Netlify"],
+      liveUrl: "https://abdi-lamu-portfolio.netlify.app",
+      githubUrl: "https://github.com/abdi-lamu/portfolio",
     },
     {
       title: "Payroll Management System",
       description:
-        "A comprehensive payroll management system for businesses to handle employee salaries, benefits, and tax calculations.",
+        "A comprehensive payroll management system for businesses to handle employee salaries, benefits, and tax calculations. Features user authentication, role-based access control, and automated calculations.",
       image:
         "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1411&q=80",
-      technologies: ["React", "TypeScript", "Node.js", "MongoDB"],
+      technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Express.js"],
       liveUrl: "https://payroll-system.com",
-      githubUrl: "https://github.com/yourusername/payroll-system",
+      githubUrl: "https://github.com/abdi-lamu/payroll-system",
     },
   ];
 

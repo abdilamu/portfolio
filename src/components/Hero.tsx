@@ -8,6 +8,8 @@ import {
   useColorModeValue,
   VStack,
   HStack,
+  Image,
+  Flex,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -20,53 +22,88 @@ const Hero = () => {
       alignItems="center"
     >
       <Container maxW="container.xl">
-        <Stack spacing={8} textAlign="center">
-          <VStack spacing={6}>
-            <Heading
-              fontSize={{ base: "3xl", md: "4xl", lg: "6xl" }}
-              fontWeight="bold"
-              color={useColorModeValue("gray.800", "white")}
+        <Flex
+          direction={{ base: "column", lg: "row" }}
+          align="center"
+          justify="center"
+          gap={8}
+          minH="80vh"
+        >
+          {/* Profile Image Section */}
+          <VStack spacing={6} flex="1" order={{ base: 1, lg: 2 }}>
+            <Box
+              position="relative"
+              borderRadius="full"
+              overflow="hidden"
+              boxShadow="2xl"
+              border="4px solid"
+              borderColor={useColorModeValue("gray.200", "gray.700")}
             >
-              Hi, I'm{" "}
-              <Text as="span" color="brand.500">
-                Abdi Lamu
-              </Text>
-            </Heading>
-            <Text
-              fontSize={{ base: "lg", md: "xl" }}
-              color={useColorModeValue("gray.600", "gray.300")}
-              maxW="2xl"
-            >
-              I am a Software Engineering graduate from Haramaya University,
-              awarded for academic excellence and a top scorer in the national
-              exit exam. My journey is driven by curiosity, hard work, and a
-              commitment to making a difference through technology.
-            </Text>
+              <Image
+                src="/profile-image.jpg" // Replace with your image path
+                alt="Abdi Lamu Akuma"
+                width={{ base: "200px", md: "250px", lg: "300px" }}
+                height={{ base: "200px", md: "250px", lg: "300px" }}
+                objectFit="cover"
+                fallbackSrc="https://via.placeholder.com/300x300/3182CE/FFFFFF?text=Abdi+Lamu"
+              />
+            </Box>
           </VStack>
-          <HStack spacing={4} justify="center">
-            <Button
-              as={RouterLink}
-              to="/projects"
-              size="lg"
-              colorScheme="brand"
-              rounded="full"
-              px={8}
-            >
-              View My Work
-            </Button>
-            <Button
-              as={RouterLink}
-              to="/contact"
-              size="lg"
-              variant="outline"
-              colorScheme="brand"
-              rounded="full"
-              px={8}
-            >
-              Get In Touch
-            </Button>
-          </HStack>
-        </Stack>
+
+          {/* Text Content Section */}
+          <VStack
+            spacing={8}
+            flex="1"
+            order={{ base: 2, lg: 1 }}
+            textAlign={{ base: "center", lg: "left" }}
+          >
+            <VStack spacing={6} align={{ base: "center", lg: "start" }}>
+              <Heading
+                fontSize={{ base: "3xl", md: "4xl", lg: "6xl" }}
+                fontWeight="bold"
+                color={useColorModeValue("gray.800", "white")}
+              >
+                Hi, I'm{" "}
+                <Text as="span" color="brand.500">
+                  Abdi Lamu
+                </Text>
+              </Heading>
+              <Text
+                fontSize={{ base: "lg", md: "xl" }}
+                color={useColorModeValue("gray.600", "gray.300")}
+                maxW="2xl"
+              >
+                I am a Software Engineering graduate from Haramaya University,
+                awarded for academic excellence and a top scorer in the national
+                exit exam. My journey is driven by curiosity, hard work, and a
+                commitment to making a difference through technology.
+              </Text>
+            </VStack>
+            <HStack spacing={4} justify={{ base: "center", lg: "start" }}>
+              <Button
+                as={RouterLink}
+                to="/projects"
+                size="lg"
+                colorScheme="brand"
+                rounded="full"
+                px={8}
+              >
+                View My Work
+              </Button>
+              <Button
+                as={RouterLink}
+                to="/contact"
+                size="lg"
+                variant="outline"
+                colorScheme="brand"
+                rounded="full"
+                px={8}
+              >
+                Get In Touch
+              </Button>
+            </HStack>
+          </VStack>
+        </Flex>
       </Container>
     </Box>
   );
