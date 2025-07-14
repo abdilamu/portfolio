@@ -99,47 +99,6 @@ const ProjectCard = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const getTechIcon = (tech: string) => {
-    switch (tech.toLowerCase()) {
-      case "react":
-        return FaReact;
-      case "typescript":
-        return SiTypescript;
-      case "node.js":
-        return FaNodeJs;
-      case "mongodb":
-        return FaDatabase;
-      case "chakra ui":
-        return SiChakraui;
-      case "react native":
-        return FaMobile;
-      case "flutter":
-        return SiFlutter;
-      case "firebase":
-        return SiFirebase;
-      case "dart":
-        return SiDart;
-      case "cloud firestore":
-        return SiFirebase;
-      case "firebase auth":
-        return SiFirebase;
-      case "html":
-        return FaHtml5;
-      case "bootstrap":
-        return SiBootstrap;
-      case "javascript":
-        return FaJs;
-      case "php":
-        return FaPhp;
-      case "jquery":
-        return SiJquery;
-      case "mysql":
-        return SiMysql;
-      default:
-        return FaReact;
-    }
-  };
-
   return (
     <Box
       w={"full"}
