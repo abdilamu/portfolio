@@ -21,29 +21,12 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import {
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaMobile,
-  FaHtml5,
-  FaJs,
-  FaPhp,
   FaChevronLeft,
   FaChevronRight,
   FaExternalLinkAlt,
   FaGithub,
   FaImages,
 } from "react-icons/fa";
-import {
-  SiTypescript,
-  SiChakraui,
-  SiFlutter,
-  SiFirebase,
-  SiDart,
-  SiBootstrap,
-  SiJquery,
-  SiMysql,
-} from "react-icons/si";
 import screenshot1 from "../assets/visit-ethiopia/screenshot1.jpg";
 import screenshot2 from "../assets/visit-ethiopia/screenshot2.jpg";
 import screenshot3 from "../assets/visit-ethiopia/screenshot3.jpg";
